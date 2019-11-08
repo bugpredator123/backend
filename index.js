@@ -3,7 +3,8 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cors())
-const PORT = process.env.PORT|| 80;
+const PORT = process.env.PORT|| 9000;
+
 const mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://admin:admin@cluster0-drnph.mongodb.net/bugpredator?retryWrites=true&w=majority", { useNewUrlParser: true }) // this returns promise
     .then(() => console.log("Connected to Mongodb"))

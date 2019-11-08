@@ -66,11 +66,9 @@ async function resendKey(req, res) {
 
 async function validate(req,res){
     try{
-        console.log(req.body);
         let result = await Cart.findOne({"_id":req.body.serial,"product_key":req.body.key,"mac":req.body.mac});
         console.log(result);
         if(result){
-            console.log(result)
             res.status(200).send({"status":"valid"});
         }
         else{
